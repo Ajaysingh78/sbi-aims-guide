@@ -77,19 +77,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "SBI OneAI — From Transaction Banking to Goal Banking" },
+      {
+        name: "description",
+        content:
+          "SBI OneAI is an Agentic Banking platform that helps customers make smarter financial decisions through AI-powered goal planning and future simulation.",
+      },
+      { name: "author", content: "SBI OneAI" },
+      { property: "og:title", content: "SBI OneAI — Goal Banking, Reimagined" },
+      {
+        property: "og:description",
+        content:
+          "An Agentic Banking platform from SBI. Plan goals, simulate the future, and receive intelligent financial guidance.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap",
       },
     ],
   }),
@@ -118,7 +126,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
