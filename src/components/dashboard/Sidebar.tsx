@@ -9,18 +9,20 @@ import {
   LogOut,
   ChevronLeft,
   User,
+  MessageCircle,
 } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Logo } from "@/components/brand/Logo";
 import { cn } from "@/lib/utils";
 
 const items = [
-  { label: "Dashboard", icon: LayoutDashboard, to: "/dashboard" },
-  { label: "Goals", icon: Target, to: "/dashboard" },
-  { label: "Simulation", icon: Wand2, to: "/dashboard" },
-  { label: "Insights", icon: Sparkles, to: "/dashboard" },
-  { label: "Products", icon: Wallet, to: "/dashboard" },
-  { label: "Settings", icon: Settings, to: "/dashboard" },
+  { label: "Overview", icon: LayoutDashboard, to: "/dashboard" as const },
+  { label: "Goals", icon: Target, to: "/dashboard/goals" as const },
+  { label: "Simulation", icon: Wand2, to: "/dashboard/simulation" as const },
+  { label: "Insights", icon: Sparkles, to: "/dashboard/insights" as const },
+  { label: "Copilot", icon: MessageCircle, to: "/dashboard/copilot" as const },
+  { label: "Products", icon: Wallet, to: "/dashboard/products" as const },
+  { label: "Settings", icon: Settings, to: "/dashboard/settings" as const },
 ];
 
 export function DashSidebar() {
@@ -49,8 +51,11 @@ export function DashSidebar() {
         {!collapsed && (
           <p className="px-2 pb-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Workspace</p>
         )}
-        {items.map((item, i) => {
-          const active = i === 0 && pathname.startsWith("/dashboard");
+        {items.map((item) => {
+          const active =
+            item.to === "/dashboard"
+              ? pathname === "/dashboard" || pathname === "/dashboard/"
+              : pathname.startsWith(item.to);
           return (
             <Link
               key={item.label}
