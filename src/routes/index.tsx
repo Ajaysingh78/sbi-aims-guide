@@ -47,15 +47,25 @@ function Nav() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Logo />
         <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-          <a href="#features" className="transition-colors hover:text-foreground">Features</a>
-          <a href="#vision" className="transition-colors hover:text-foreground">Vision</a>
-          <a href="#preview" className="transition-colors hover:text-foreground">Demo</a>
+          <a href="#features" className="transition-colors hover:text-foreground">
+            Features
+          </a>
+          <a href="#vision" className="transition-colors hover:text-foreground">
+            Vision
+          </a>
+          <a href="#preview" className="transition-colors hover:text-foreground">
+            Demo
+          </a>
         </nav>
         <div className="flex items-center gap-2">
           <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
             <Link to="/login">Sign in</Link>
           </Button>
-          <Button asChild size="sm" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button
+            asChild
+            size="sm"
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+          >
             <Link to="/login">
               Explore demo
               <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
@@ -83,7 +93,7 @@ function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
             </span>
-            Introducing SBI OneAI — v0.1
+            Introducing SBI OneAI — prototype v0.1
           </div>
           <h1 className="mt-6 text-balance text-5xl font-semibold tracking-tight md:text-7xl">
             From Transaction Banking
@@ -143,10 +153,15 @@ function PreviewBand() {
                 <span className="h-2.5 w-2.5 rounded-full bg-success/70" />
               </div>
               <span className="text-xs text-muted-foreground">oneai.sbi / dashboard</span>
-              <span className="text-xs text-muted-foreground">Live preview</span>
+              <span className="text-xs text-muted-foreground">Interactive preview</span>
             </div>
             <div className="grid gap-4 p-5 md:grid-cols-[1fr_1.6fr_1fr]">
-              <PreviewCard title="Financial Health" value="824" subtitle="Excellent" tone="success" />
+              <PreviewCard
+                title="Financial Health"
+                value="824"
+                subtitle="Excellent"
+                tone="success"
+              />
               <PreviewCard
                 title="What-If Simulation"
                 value="₹1,20,000 iPhone"
@@ -154,10 +169,30 @@ function PreviewBand() {
                 tone="primary"
                 large
               />
-              <PreviewCard title="Goal Progress" value="68%" subtitle="Goa Trip — Mar 2027" tone="accent" />
-              <PreviewCard title="Monthly Savings" value="₹38,400" subtitle="+12% vs last month" tone="default" />
-              <PreviewCard title="AI Insight" value="Increase SIP by ₹2,500" subtitle="Stay on track" tone="primary" />
-              <PreviewCard title="Emergency Fund" value="4.2 mo" subtitle="Target: 6 months" tone="warning" />
+              <PreviewCard
+                title="Goal Progress"
+                value="68%"
+                subtitle="Goa Trip — Mar 2027"
+                tone="accent"
+              />
+              <PreviewCard
+                title="Monthly Savings"
+                value="₹38,400"
+                subtitle="+12% vs last month"
+                tone="default"
+              />
+              <PreviewCard
+                title="AI Insight"
+                value="Increase SIP by ₹2,500"
+                subtitle="Stay on track"
+                tone="primary"
+              />
+              <PreviewCard
+                title="Emergency Fund"
+                value="4.2 mo"
+                subtitle="Target: 6 months"
+                tone="warning"
+              />
             </div>
           </div>
         </div>
@@ -196,19 +231,23 @@ function PreviewCard({
         <span>{title}</span>
         <span className={`h-1.5 w-1.5 rounded-full ${accentColor.replace("text-", "bg-")}`} />
       </div>
-      <div className={`mt-3 font-semibold tracking-tight ${large ? "text-3xl" : "text-xl"}`}>{value}</div>
+      <div className={`mt-3 font-semibold tracking-tight ${large ? "text-3xl" : "text-xl"}`}>
+        {value}
+      </div>
       <div className={`mt-1 text-xs ${accentColor}`}>{subtitle}</div>
       {large && (
         <div className="mt-5 space-y-2">
-          {["Goal impact", "Savings impact", "Timeline shift", "Suggested alternative"].map((row) => (
-            <div
-              key={row}
-              className="flex items-center justify-between rounded-lg border border-border/70 bg-background/40 px-3 py-2 text-xs"
-            >
-              <span className="text-muted-foreground">{row}</span>
-              <span className="font-medium text-foreground">—</span>
-            </div>
-          ))}
+          {["Goal impact", "Savings impact", "Timeline shift", "Suggested alternative"].map(
+            (row) => (
+              <div
+                key={row}
+                className="flex items-center justify-between rounded-lg border border-border/70 bg-background/40 px-3 py-2 text-xs"
+              >
+                <span className="text-muted-foreground">{row}</span>
+                <span className="font-medium text-foreground">—</span>
+              </div>
+            ),
+          )}
         </div>
       )}
     </div>
@@ -217,12 +256,36 @@ function PreviewCard({
 
 function Benefits() {
   const items = [
-    { icon: Brain, title: "AI Financial Twin", body: "A living model of your money — income, spend, goals — kept in sync." },
-    { icon: Target, title: "Goal Planning", body: "Turn life ambitions into structured, fundable plans you can act on." },
-    { icon: Wand2, title: "What-If Simulation", body: "See how every decision shifts your goals before you commit." },
-    { icon: Compass, title: "Personalized Banking", body: "Products and nudges tailored to where you are in your journey." },
-    { icon: LineChart, title: "Intelligent Guidance", body: "Contextual insights from your Copilot, not a generic chatbot." },
-    { icon: ShieldCheck, title: "Enterprise Trust", body: "Backed by SBI's institutional rigor, compliance, and security." },
+    {
+      icon: Brain,
+      title: "AI Financial Twin",
+      body: "A living model of your money — income, spend, goals — kept in sync.",
+    },
+    {
+      icon: Target,
+      title: "Goal Planning",
+      body: "Turn life ambitions into structured, fundable plans you can act on.",
+    },
+    {
+      icon: Wand2,
+      title: "What-If Simulation",
+      body: "See how every decision shifts your goals before you commit.",
+    },
+    {
+      icon: Compass,
+      title: "Personalized Banking",
+      body: "Products and nudges tailored to where you are in your journey.",
+    },
+    {
+      icon: LineChart,
+      title: "Intelligent Guidance",
+      body: "Contextual insights from your Copilot, not a generic chatbot.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Enterprise Trust",
+      body: "Backed by SBI's institutional rigor, compliance, and security.",
+    },
   ];
   return (
     <section id="features" className="border-t border-border bg-surface/30 px-6 py-24">
@@ -283,8 +346,8 @@ function WhySection() {
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               Traditional apps help customers do banking. SBI OneAI helps customers
-              <em className="not-italic text-foreground"> live their financial lives</em> —
-              with an Agentic AI that plans, simulates, and guides.
+              <em className="not-italic text-foreground"> live their financial lives</em> — with
+              Agentic AI that plans, simulates, and guides.
             </p>
           </div>
           <div className="space-y-4">
@@ -328,8 +391,8 @@ function CTA() {
                 Experience the future of intelligent banking.
               </h2>
               <p className="mt-4 max-w-xl text-sm text-muted-foreground md:text-base">
-                Step inside the SBI OneAI prototype — explore goal planning, what-if simulation,
-                and the Financial Copilot, all in a premium banking workspace.
+                Step inside the SBI OneAI prototype — explore goal planning, what-if simulation, and
+                the Financial Copilot, all in a premium banking workspace.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
@@ -339,7 +402,12 @@ function CTA() {
                   <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full border-border-strong bg-surface/50 px-6">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-full border-border-strong bg-surface/50 px-6"
+              >
                 <a href="#features">View features</a>
               </Button>
             </div>

@@ -34,7 +34,7 @@ const jargonBusters = [
   {
     term: "CAGR",
     plain:
-      "The smoothed annual growth rate of an investment, as if it grew steadily — useful for comparing options that move differently year to year.",
+      "The smoothed annual growth rate of an investment, useful for comparing options that move differently year to year.",
   },
   {
     term: "Emergency Fund",
@@ -59,7 +59,8 @@ function InsightsPage() {
           Insights that anticipate, not react.
         </h1>
         <p className="mt-1.5 max-w-2xl text-sm text-muted-foreground">
-          Your Twin continuously observes income, spend, and goals — surfacing only what changes your decisions.
+          Your Twin continuously observes income, spend, and goals — surfacing only what changes
+          your decisions.
         </p>
       </div>
 
@@ -91,7 +92,7 @@ function InsightsPage() {
           <h3 className="text-sm font-semibold">Radical Transparency · Plain-language banking</h3>
         </div>
         <p className="mt-1 text-xs text-muted-foreground">
-          Tap any term you've heard in banking — your Twin explains it the way a friend would.
+          Tap any banking term — your Twin explains it in plain language.
         </p>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           {jargonBusters.map((j) => (

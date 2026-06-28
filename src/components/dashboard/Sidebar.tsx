@@ -49,7 +49,9 @@ export function DashSidebar() {
 
       <nav className="flex-1 space-y-1 px-3 py-4">
         {!collapsed && (
-          <p className="px-2 pb-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Workspace</p>
+          <p className="px-2 pb-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            Workspace
+          </p>
         )}
         {items.map((item) => {
           const active =
@@ -97,7 +99,7 @@ export function DashSidebar() {
           {!collapsed && (
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-medium text-foreground">Arjun Reddy</p>
-              <p className="truncate text-[11px] text-muted-foreground">Premier customer</p>
+              <p className="truncate text-[11px] text-muted-foreground">Premier Banking</p>
             </div>
           )}
           {!collapsed && (

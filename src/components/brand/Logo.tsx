@@ -1,6 +1,12 @@
 import { cn } from "@/lib/utils";
 
-export function Logo({ className, showWordmark = true }: { className?: string; showWordmark?: boolean }) {
+export function Logo({
+  className,
+  showWordmark = true,
+}: {
+  className?: string;
+  showWordmark?: boolean;
+}) {
   return (
     <div className={cn("flex items-center gap-2.5", className)}>
       <div className="relative grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-accent shadow-[0_8px_24px_-8px] shadow-primary/60">
@@ -18,7 +24,7 @@ export function Logo({ className, showWordmark = true }: { className?: string; s
             SBI <span className="text-accent">OneAI</span>
           </span>
           <span className="mt-0.5 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-            Agentic Banking
+            OneAI Banking
           </span>
         </div>
       )}

@@ -93,11 +93,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "SBI OneAI — From Transaction Banking to Goal Banking" },
-      { name: "description", content: "SBI OneAI is a frontend foundation for an AI-powered banking platform that guides users toward financial goals." },
-      { property: "og:description", content: "SBI OneAI is a frontend foundation for an AI-powered banking platform that guides users toward financial goals." },
-      { name: "twitter:description", content: "SBI OneAI is a frontend foundation for an AI-powered banking platform that guides users toward financial goals." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01389b3e-2c91-4041-9d42-97edec8eaafc/id-preview-f5fb6694--159ea8f1-cf62-4ab3-b97a-5da818b1788f.lovable.app-1782630480884.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01389b3e-2c91-4041-9d42-97edec8eaafc/id-preview-f5fb6694--159ea8f1-cf62-4ab3-b97a-5da818b1788f.lovable.app-1782630480884.png" },
+      {
+        name: "description",
+        content:
+          "SBI OneAI is a frontend foundation for an AI-powered banking platform that guides users toward financial goals.",
+      },
+      {
+        property: "og:description",
+        content:
+          "SBI OneAI is a frontend foundation for an AI-powered banking platform that guides users toward financial goals.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "SBI OneAI is a frontend foundation for an AI-powered banking platform that guides users toward financial goals.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01389b3e-2c91-4041-9d42-97edec8eaafc/id-preview-f5fb6694--159ea8f1-cf62-4ab3-b97a-5da818b1788f.lovable.app-1782630480884.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01389b3e-2c91-4041-9d42-97edec8eaafc/id-preview-f5fb6694--159ea8f1-cf62-4ab3-b97a-5da818b1788f.lovable.app-1782630480884.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

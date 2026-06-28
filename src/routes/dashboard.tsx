@@ -7,7 +7,10 @@ export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
       { title: "Workspace — SBI OneAI" },
-      { name: "description", content: "Your Financial Twin: goals, simulations, and intelligent guidance." },
+      {
+        name: "description",
+        content: "Your Financial Twin: goals, simulations, and intelligent guidance.",
+      },
     ],
   }),
   component: DashboardLayout,
@@ -15,7 +18,7 @@ export const Route = createFileRoute("/dashboard")({
 
 function DashboardLayout() {
   const path = useRouterState({ select: (s) => s.location.pathname });
-  // Hide the right copilot rail on the dedicated copilot page (chat takes the full width)
+  // Keep the dedicated chat page focused by hiding the right-side Copilot rail.
   const showCopilot = !path.startsWith("/dashboard/copilot");
 
   return (

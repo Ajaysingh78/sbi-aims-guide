@@ -17,7 +17,10 @@ export const Route = createFileRoute("/dashboard/simulation")({
   head: () => ({
     meta: [
       { title: "What-If Simulation — SBI OneAI" },
-      { name: "description", content: "Simulate financial decisions and see their impact on your goals." },
+      {
+        name: "description",
+        content: "Simulate financial decisions before they affect your goals.",
+      },
     ],
   }),
   component: SimulationPage,
@@ -31,7 +34,7 @@ function SimulationPage() {
   const [monthlyIncome, setMonthlyIncome] = useState(125000);
   const [monthlySpend, setMonthlySpend] = useState(72000);
   const [sip, setSip] = useState(15000);
-  const [oneTime, setOneTime] = useState(120000); // big purchase (e.g. phone)
+  const [oneTime, setOneTime] = useState(120000); // Big purchase, such as a phone or trip.
   const [horizonYears, setHorizonYears] = useState(5);
   const [returnRate, setReturnRate] = useState(11); // % p.a.
 
@@ -97,7 +100,7 @@ function SimulationPage() {
       <PageHeader
         eyebrow="What-If Engine"
         title="Simulate your decisions before you commit."
-        description="Adjust the inputs below. Your Financial Twin re-projects your corpus instantly."
+        description="Adjust the inputs below. Your Financial Twin updates the projection instantly."
         icon={<Wand2 className="h-4 w-4" />}
         right={
           <button
@@ -140,7 +143,7 @@ function SimulationPage() {
             format={fmtINR}
           />
           <Slider
-            label="One-time decision (e.g. phone, trip)"
+            label="One-time decision"
             value={oneTime}
             min={0}
             max={1000000}
@@ -187,7 +190,7 @@ function SimulationPage() {
               label="Verdict"
               value={onTrack ? "Safe to proceed" : "Reconsider"}
               tone={onTrack ? "success" : "warning"}
-              hint="Financial Twin recommendation"
+              hint="Twin recommendation"
             />
           </div>
 
@@ -234,8 +237,19 @@ function SimulationPage() {
                     </linearGradient>
                   </defs>
                   <CartesianGrid stroke="oklch(1 0 0 / 0.06)" vertical={false} />
-                  <XAxis dataKey="m" stroke="oklch(0.72 0.02 250)" fontSize={11} tickLine={false} axisLine={false} />
-                  <YAxis stroke="oklch(0.72 0.02 250)" fontSize={11} tickLine={false} axisLine={false} />
+                  <XAxis
+                    dataKey="m"
+                    stroke="oklch(0.72 0.02 250)"
+                    fontSize={11}
+                    tickLine={false}
+                    axisLine={false}
+                  />
+                  <YAxis
+                    stroke="oklch(0.72 0.02 250)"
+                    fontSize={11}
+                    tickLine={false}
+                    axisLine={false}
+                  />
                   <Tooltip
                     contentStyle={{
                       background: "oklch(0.18 0.04 254)",
@@ -292,7 +306,13 @@ function SimulationPage() {
                     strokeWidth={2}
                     dot={false}
                   />
-                  <Line type="monotone" dataKey="baseline" stroke="var(--accent)" strokeWidth={1.5} dot={false} />
+                  <Line
+                    type="monotone"
+                    dataKey="baseline"
+                    stroke="var(--accent)"
+                    strokeWidth={1.5}
+                    dot={false}
+                  />
                   <XAxis dataKey="m" hide />
                   <YAxis hide />
                 </LineChart>
@@ -389,7 +409,9 @@ function PageHeader({
           {eyebrow}
         </div>
         <h1 className="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">{title}</h1>
-        {description && <p className="mt-1.5 max-w-2xl text-sm text-muted-foreground">{description}</p>}
+        {description && (
+          <p className="mt-1.5 max-w-2xl text-sm text-muted-foreground">{description}</p>
+        )}
       </div>
       {right}
     </div>

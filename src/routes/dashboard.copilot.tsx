@@ -27,7 +27,7 @@ const suggestions = [
   "Can I afford a ₹12L car?",
   "When will I reach my home down payment?",
   "How is my emergency fund doing?",
-  "Should I increase my SIP?",
+  "Should I increase my monthly SIP?",
 ];
 
 // Lightweight rule-based reply generator for demo (no backend dependency)
@@ -43,7 +43,7 @@ function generateReply(q: string): string {
     return "Your emergency fund sits at ₹4.2L — about 4.2 months of expenses. Target is 6 months (₹6L). Holding the current ₹12k/month pace gets you there by Dec 2026. I'd prioritise this before any discretionary purchase above ₹50k.";
   }
   if (t.includes("sip") || t.includes("invest")) {
-    return "Yes — a ₹2,500 increase to your Bluechip SIP would not affect monthly liquidity (your buffer is ₹18k) and would unlock the Down Payment goal 8 months earlier. Shall I schedule it from next debit?";
+    return "Yes — a ₹2,500 increase to your Bluechip SIP would not affect monthly liquidity (your buffer is ₹18k) and can bring the Down Payment goal 8 months closer. Shall I schedule it from next debit?";
   }
   if (t.includes("phone") || t.includes("iphone")) {
     return "A ₹1.2L phone today delays your Goa Trip by 3 months and your Down Payment timeline shifts by ~3 months. Splitting into 6 EMIs at 0% (your card supports it) keeps every goal intact.";
@@ -76,14 +76,17 @@ function CopilotPage() {
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setThinking(true);
-    setTimeout(() => {
-      setMessages((m) => [
-        ...m,
-        { id: crypto.randomUUID(), role: "assistant", content: generateReply(content) },
-      ]);
-      setThinking(false);
-      setTimeout(() => inputRef.current?.focus(), 0);
-    }, 700 + Math.random() * 500);
+    setTimeout(
+      () => {
+        setMessages((m) => [
+          ...m,
+          { id: crypto.randomUUID(), role: "assistant", content: generateReply(content) },
+        ]);
+        setThinking(false);
+        setTimeout(() => inputRef.current?.focus(), 0);
+      },
+      700 + Math.random() * 500,
+    );
   };
 
   return (
@@ -110,7 +113,7 @@ function CopilotPage() {
           {thinking && (
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
               <Sparkles className="h-3.5 w-3.5 animate-pulse text-primary-glow" />
-              OneAI is consulting your Twin…
+              OneAI is reviewing your Twin…
             </div>
           )}
         </div>

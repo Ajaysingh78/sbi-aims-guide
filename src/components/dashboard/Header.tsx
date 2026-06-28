@@ -13,7 +13,9 @@ export function DashHeader() {
     <header className="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-3.5 sm:flex sm:justify-between">
         <div className="min-w-0">
-          <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Good evening</p>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            Good evening
+          </p>
           <h1 className="mt-0.5 truncate text-lg font-semibold tracking-tight sm:text-xl">
             Welcome back, Arjun
           </h1>
@@ -23,7 +25,7 @@ export function DashHeader() {
           <div className="relative hidden md:block">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <input
-              placeholder="Search goals, products, insights…"
+              placeholder="Search goals, products, or insights…"
               className="h-10 w-72 rounded-lg border border-border bg-surface/60 pl-9 pr-3 text-sm outline-none transition-colors focus:border-primary/60 focus:bg-surface"
             />
           </div>
@@ -35,7 +37,7 @@ export function DashHeader() {
             {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
           <button
-            aria-label="Notifications"
+            aria-label="View notifications"
             className="relative grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-border bg-surface/60 text-muted-foreground hover:text-foreground"
           >
             <Bell className="h-4 w-4" />

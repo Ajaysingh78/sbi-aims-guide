@@ -2,9 +2,24 @@ import { Sparkles, TrendingUp, AlertTriangle, CheckCircle2, ArrowRight } from "l
 import { insights } from "@/lib/mock";
 
 const toneStyles = {
-  success: { dot: "bg-success", border: "border-success/30", icon: CheckCircle2, accent: "text-success" },
-  primary: { dot: "bg-primary-glow", border: "border-primary/30", icon: TrendingUp, accent: "text-primary-glow" },
-  warning: { dot: "bg-warning", border: "border-warning/30", icon: AlertTriangle, accent: "text-warning" },
+  success: {
+    dot: "bg-success",
+    border: "border-success/30",
+    icon: CheckCircle2,
+    accent: "text-success",
+  },
+  primary: {
+    dot: "bg-primary-glow",
+    border: "border-primary/30",
+    icon: TrendingUp,
+    accent: "text-primary-glow",
+  },
+  warning: {
+    dot: "bg-warning",
+    border: "border-warning/30",
+    icon: AlertTriangle,
+    accent: "text-warning",
+  },
 } as const;
 
 export function Copilot() {
@@ -26,7 +41,9 @@ export function Copilot() {
       </div>
 
       <div className="flex-1 space-y-3 overflow-y-auto p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Today's guidance</p>
+        <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          Today's guidance
+        </p>
         {insights.map((ins, i) => {
           const t = toneStyles[ins.tone];
           const Icon = t.icon;
@@ -58,7 +75,7 @@ export function Copilot() {
 
       <div className="border-t border-border p-4">
         <div className="rounded-lg border border-border bg-background/60 p-3 text-xs text-muted-foreground">
-          Copilot does not chat. It observes your Financial Twin and suggests intentional next steps.
+          Copilot watches your Financial Twin and suggests intentional next steps.
         </div>
       </div>
     </aside>

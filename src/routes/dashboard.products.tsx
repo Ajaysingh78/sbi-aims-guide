@@ -1,5 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Wallet, ShieldCheck, TrendingUp, CreditCard, Home, ArrowRight, Sparkles } from "lucide-react";
+import {
+  Wallet,
+  ShieldCheck,
+  TrendingUp,
+  CreditCard,
+  Home,
+  ArrowRight,
+  Sparkles,
+} from "lucide-react";
 
 export const Route = createFileRoute("/dashboard/products")({
   head: () => ({
@@ -73,7 +81,7 @@ function ProductsPage() {
           Products are recommended only when they help.
         </h1>
         <p className="mt-1.5 max-w-2xl text-sm text-muted-foreground">
-          No upsell loops. Each match is scored by your Financial Twin against your goals, cashflow, and risk profile.
+          No upsell loops. Each match is scored against your goals, cashflow, and risk profile.
         </p>
       </div>
 
@@ -86,7 +94,9 @@ function ProductsPage() {
                   <p.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground">{p.category}</p>
+                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                    {p.category}
+                  </p>
                   <p className="text-sm font-semibold">{p.name}</p>
                 </div>
               </div>
@@ -96,7 +106,7 @@ function ProductsPage() {
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{p.why}</p>
 
             <div className="mt-5 flex items-center justify-between">
-              <span className="text-[11px] text-muted-foreground">Powered by your Twin</span>
+              <span className="text-[11px] text-muted-foreground">Matched by your Twin</span>
               <button className="inline-flex items-center gap-1 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:bg-primary/90">
                 {p.cta} <ArrowRight className="h-3 w-3" />
               </button>
@@ -109,9 +119,16 @@ function ProductsPage() {
 }
 
 function MatchBadge({ score }: { score: number }) {
-  const tone = score >= 90 ? "text-success border-success/40" : score >= 80 ? "text-primary-glow border-primary/40" : "text-muted-foreground border-border";
+  const tone =
+    score >= 90
+      ? "text-success border-success/40"
+      : score >= 80
+        ? "text-primary-glow border-primary/40"
+        : "text-muted-foreground border-border";
   return (
-    <div className={`rounded-full border bg-background/40 px-2.5 py-1 text-[10px] font-semibold tabular-nums ${tone}`}>
+    <div
+      className={`rounded-full border bg-background/40 px-2.5 py-1 text-[10px] font-semibold tabular-nums ${tone}`}
+    >
       {score}/100
     </div>
   );

@@ -34,11 +34,56 @@ type Goal = {
 };
 
 const initial: Goal[] = [
-  { id: "g1", name: "Goa Trip", icon: Plane, target: 180000, saved: 122400, deadline: "Mar 2027", monthlyContribution: 8000, category: "Travel" },
-  { id: "g2", name: "Emergency Fund", icon: ShieldCheck, target: 600000, saved: 420000, deadline: "Dec 2026", monthlyContribution: 12000, category: "Safety" },
-  { id: "g3", name: "New iPhone", icon: Smartphone, target: 120000, saved: 42000, deadline: "Feb 2027", monthlyContribution: 6000, category: "Lifestyle" },
-  { id: "g4", name: "Home Down Payment", icon: Home, target: 2500000, saved: 550000, deadline: "Jun 2029", monthlyContribution: 35000, category: "Asset" },
-  { id: "g5", name: "MBA Fund", icon: GraduationCap, target: 1800000, saved: 280000, deadline: "Jul 2028", monthlyContribution: 18000, category: "Education" },
+  {
+    id: "g1",
+    name: "Goa Trip",
+    icon: Plane,
+    target: 180000,
+    saved: 122400,
+    deadline: "Mar 2027",
+    monthlyContribution: 8000,
+    category: "Travel",
+  },
+  {
+    id: "g2",
+    name: "Emergency Fund",
+    icon: ShieldCheck,
+    target: 600000,
+    saved: 420000,
+    deadline: "Dec 2026",
+    monthlyContribution: 12000,
+    category: "Safety",
+  },
+  {
+    id: "g3",
+    name: "New iPhone",
+    icon: Smartphone,
+    target: 120000,
+    saved: 42000,
+    deadline: "Feb 2027",
+    monthlyContribution: 6000,
+    category: "Lifestyle",
+  },
+  {
+    id: "g4",
+    name: "Home Down Payment",
+    icon: Home,
+    target: 2500000,
+    saved: 550000,
+    deadline: "Jun 2029",
+    monthlyContribution: 35000,
+    category: "Asset",
+  },
+  {
+    id: "g5",
+    name: "MBA Fund",
+    icon: GraduationCap,
+    target: 1800000,
+    saved: 280000,
+    deadline: "Jul 2028",
+    monthlyContribution: 18000,
+    category: "Education",
+  },
 ];
 
 const fmt = (n: number) => "₹" + n.toLocaleString("en-IN");
@@ -60,7 +105,8 @@ function GoalsPage() {
             Every rupee, tied to a purpose.
           </h1>
           <p className="mt-1.5 max-w-2xl text-sm text-muted-foreground">
-            {goals.length} active goals · {fmt(totalSaved)} of {fmt(totalTarget)} funded ({overall}%).
+            {goals.length} active goals · {fmt(totalSaved)} funded of {fmt(totalTarget)} ({overall}
+            %).
           </p>
         </div>
         <button className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
@@ -105,7 +151,9 @@ function GoalsPage() {
               </div>
               <div className="mt-2 flex items-center justify-between text-[11px]">
                 <span className="text-success">{pct}% funded</span>
-                <span className="text-muted-foreground">{monthsLeft} mo at {fmt(g.monthlyContribution)}/mo</span>
+                <span className="text-muted-foreground">
+                  {monthsLeft} mo at {fmt(g.monthlyContribution)}/mo
+                </span>
               </div>
 
               <div className="mt-4 grid grid-cols-2 gap-2">
@@ -125,7 +173,7 @@ function GoalsPage() {
             <Plus className="h-5 w-5" />
           </div>
           <p className="text-sm font-medium">Add a new goal</p>
-          <p className="text-xs">Twin will project the path for you.</p>
+          <p className="text-xs">Your Twin will project the path for you.</p>
         </button>
       </div>
 
@@ -141,7 +189,10 @@ function GoalsPage() {
             { step: "3", text: "Defer iPhone purchase by 2 months to protect Home Down Payment." },
             { step: "4", text: "Increase MBA Fund SIP by ₹2,500 once Emergency Fund completes." },
           ].map((s) => (
-            <li key={s.step} className="flex items-start gap-3 rounded-xl border border-border bg-background/40 p-3">
+            <li
+              key={s.step}
+              className="flex items-start gap-3 rounded-xl border border-border bg-background/40 p-3"
+            >
               <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/15 text-[11px] font-semibold text-primary-glow">
                 {s.step}
               </span>

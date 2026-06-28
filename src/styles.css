@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* SBI OneAI design system — dark-first enterprise banking */
+/* SBI OneAI design system — dark-first enterprise banking prototype */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -61,7 +61,7 @@
 
 /* Dark mode is the default for SBI OneAI */
 :root {
-  --radius: 0.75rem;
+  --radius: 0.7rem;
 
   --background: oklch(0.18 0.04 254);
   --foreground: oklch(0.98 0.005 240);
@@ -115,7 +115,8 @@
   --sidebar-border: oklch(1 0 0 / 6%);
   --sidebar-ring: oklch(0.62 0.18 256);
 
-  --gradient-hero: radial-gradient(
+  --gradient-hero:
+    radial-gradient(
       1200px 600px at 80% -10%,
       color-mix(in oklab, var(--primary) 35%, transparent),
       transparent 60%
@@ -130,10 +131,11 @@
     color-mix(in oklab, var(--primary) 12%, var(--card)) 0%,
     var(--card) 70%
   );
-  --shadow-elevated: 0 30px 60px -25px color-mix(in oklab, var(--primary) 35%, transparent),
+  --shadow-elevated:
+    0 30px 60px -25px color-mix(in oklab, var(--primary) 35%, transparent),
     0 8px 24px -12px rgba(0, 0, 0, 0.6);
-  --shadow-card: 0 1px 0 0 color-mix(in oklab, white 6%, transparent) inset,
-    0 20px 40px -24px rgba(0, 0, 0, 0.6);
+  --shadow-card:
+    0 1px 0 0 color-mix(in oklab, white 6%, transparent) inset, 0 20px 40px -24px rgba(0, 0, 0, 0.6);
 }
 
 .light {
@@ -177,7 +179,10 @@
     text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }

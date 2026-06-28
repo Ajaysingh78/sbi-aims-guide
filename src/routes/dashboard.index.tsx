@@ -14,7 +14,10 @@ export const Route = createFileRoute("/dashboard/")({
   head: () => ({
     meta: [
       { title: "Overview — SBI OneAI" },
-      { name: "description", content: "Your Financial Twin at a glance — health, goals, and simulations." },
+      {
+        name: "description",
+        content: "Your Financial Twin at a glance — health, goals, simulations, and next actions.",
+      },
     ],
   }),
   component: Overview,

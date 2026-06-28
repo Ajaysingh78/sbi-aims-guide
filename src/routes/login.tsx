@@ -29,7 +29,7 @@ function LoginPage() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Welcome back</p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight">Continue to SBI OneAI</h1>
             <p className="mt-3 text-sm text-muted-foreground">
-              This is a demo experience. No credentials are required — your session loads with sample data.
+              This demo uses sample data, so no real credentials are required.
             </p>
 
             <form
@@ -43,14 +43,17 @@ function LoginPage() {
                 <Label htmlFor="cif">Customer ID</Label>
                 <Input
                   id="cif"
-                  defaultValue="SBI-DEMO-00824"
+                  defaultValue="SBI-DEMO-0824"
                   className="h-11 rounded-lg border-border-strong bg-surface/60"
                 />
               </div>
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="pin">Secure PIN</Label>
-                  <button type="button" className="text-xs text-muted-foreground hover:text-foreground">
+                  <button
+                    type="button"
+                    className="text-xs text-muted-foreground hover:text-foreground"
+                  >
                     Forgot PIN?
                   </button>
                 </div>
@@ -69,17 +72,23 @@ function LoginPage() {
 
               <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
                 <Lock className="h-3 w-3" />
-                Demo session — no real account is accessed.
+                Demo session only — no real account is accessed.
               </div>
             </form>
           </div>
         </div>
-        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} State Bank of India — OneAI</p>
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} State Bank of India — OneAI
+        </p>
       </div>
 
       {/* Right: brand panel */}
       <div className="relative hidden overflow-hidden border-l border-border lg:block">
-        <div aria-hidden className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{ background: "var(--gradient-hero)" }}
+        />
         <div aria-hidden className="surface-grid absolute inset-0" />
         <div className="relative flex h-full flex-col justify-between p-12">
           <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">

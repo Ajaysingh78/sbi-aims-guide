@@ -41,7 +41,7 @@ export const insights = [
   {
     tone: "primary" as const,
     title: "Consider increasing your monthly SIP by ₹2,500.",
-    body: "This would unlock the Down Payment goal 8 months earlier.",
+    body: "This can bring the Down Payment goal 8 months closer.",
   },
   {
     tone: "warning" as const,

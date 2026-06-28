@@ -28,16 +28,28 @@ function SettingsPage() {
       </div>
 
       <Section icon={Brain} title="Twin behaviour" desc="How proactive your Copilot should be.">
-        <Toggle label="Proactive suggestions" hint="OneAI surfaces insights without asking." defaultOn />
-        <Toggle label="What-If auto-simulate" hint="Automatically simulate any spend above ₹25,000." defaultOn />
-        <Toggle label="Goal-first nudges" hint="Defer offers that don't help your top goal." defaultOn />
+        <Toggle
+          label="Proactive suggestions"
+          hint="OneAI surfaces insights without asking."
+          defaultOn
+        />
+        <Toggle
+          label="What-If auto-simulate"
+          hint="Automatically simulate any spend above ₹25,000."
+          defaultOn
+        />
+        <Toggle
+          label="Goal-first nudges"
+          hint="Defer offers that don't help your top goal."
+          defaultOn
+        />
       </Section>
 
       <Section icon={Bell} title="Notifications" desc="Reach you only when it matters.">
         <Toggle label="Goal milestones" defaultOn />
         <Toggle label="Risk alerts (emergency fund, debt)" defaultOn />
         <Toggle label="Product recommendations" />
-        <Toggle label="Weekly Twin summary (email)" defaultOn />
+        <Toggle label="Weekly Twin summary" defaultOn />
       </Section>
 
       <Section icon={ShieldCheck} title="Security & privacy" desc="Bank-grade by default.">
@@ -48,7 +60,7 @@ function SettingsPage() {
 
       <Section icon={Globe} title="Region & language" desc="">
         <Row label="Language" value="English (India)" />
-        <Row label="Currency" value="INR · ₹" />
+        <Row label="Currency" value="INR · Indian Rupee" />
         <Row label="Time zone" value="Asia/Kolkata" />
       </Section>
     </div>
