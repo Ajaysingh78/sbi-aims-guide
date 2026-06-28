@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Settings as SettingsIcon, Bell, ShieldCheck, Brain, Globe } from "lucide-react";
 

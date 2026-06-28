@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Sparkles,
@@ -10,8 +10,8 @@ import {
   Compass,
   TrendingUp,
 } from "lucide-react";
-import { Logo } from "@/components/brand/Logo";
-import { Button } from "@/components/ui/button";
+import { Logo } from "@/shared/brand/Logo";
+import { Button } from "@/shared/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => ({

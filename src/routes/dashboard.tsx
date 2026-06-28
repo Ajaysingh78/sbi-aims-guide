@@ -1,7 +1,7 @@
-import { createFileRoute, Outlet, useRouterState } from "@tanstack/react-router";
-import { DashSidebar } from "@/components/dashboard/Sidebar";
-import { DashHeader } from "@/components/dashboard/Header";
-import { Copilot } from "@/components/dashboard/Copilot";
+﻿import { createFileRoute, Outlet, useRouterState } from "@tanstack/react-router";
+import { DashSidebar } from "@/features/dashboard/components/Sidebar";
+import { DashHeader } from "@/features/dashboard/components/Header";
+import { Copilot } from "@/features/dashboard/components/Copilot";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({

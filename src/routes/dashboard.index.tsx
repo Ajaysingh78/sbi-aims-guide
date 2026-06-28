@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import {
   CurrentGoalCard,
   ExpenseSplitCard,
@@ -8,7 +8,7 @@ import {
   SavingsTimelineCard,
   UpcomingReminderCard,
   WhatIfHero,
-} from "@/components/dashboard/Cards";
+} from "@/features/dashboard/components/Cards";
 
 export const Route = createFileRoute("/dashboard/")({
   head: () => ({

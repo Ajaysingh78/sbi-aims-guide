@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import {
   Sparkles,
   TrendingUp,
@@ -7,7 +7,7 @@ import {
   BookOpen,
   ArrowRight,
 } from "lucide-react";
-import { insights } from "@/lib/mock";
+import { insights } from "@/features/dashboard/data/financial-demo-data";
 
 export const Route = createFileRoute("/dashboard/insights")({
   head: () => ({
